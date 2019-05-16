@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Center
+  - Sheild_1
+  - Sheild_2
   layers:
   - Default
   - TransparentFX
