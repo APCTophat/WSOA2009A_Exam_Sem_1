@@ -6,13 +6,21 @@ public class GameManager : MonoBehaviour
 {
     public int NumOfSheilds;
 
+    public float ShootIntervals;
+
     public GameObject SheildPrefab_1;
     public GameObject SheildPrefab_2;
     public GameObject PlayerBullet;
     public GameObject BossBullet;
+    public GameObject Aimer;
+    public GameObject Boss_Aimer;
 
     void Start()
     {
+        Aimer = GameObject.FindGameObjectWithTag("Aimer");
+        Boss_Aimer = GameObject.FindGameObjectWithTag("Boss_Aimer");
+        ShootIntervals = 5f;
+
         for (int i = 0; i < 360; i += NumOfSheilds)     //ring 1
         {
             var radius = 10f;
@@ -30,12 +38,18 @@ public class GameManager : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(PlayerBullet, new Vector3(0, 20, 0), Quaternion.identity);
+            Instantiate(PlayerBullet, Aimer.transform.position, Quaternion.identity);
         }
+        ShootIntervals -= Time.deltaTime;
+        if(ShootIntervals <= 0)
+        {
+            Instantiate(BossBullet, Boss_Aimer.transform.position, Quaternion.identity);
+            ShootIntervals = 2;
+        }
+        
     }
 }

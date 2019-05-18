@@ -7,6 +7,10 @@ TagManager:
   - Center
   - Sheild_1
   - Sheild_2
+  - Boss_Bullet
+  - Player_Bullet
+  - Aimer
+  - Boss_Aimer
   layers:
   - Default
   - TransparentFX

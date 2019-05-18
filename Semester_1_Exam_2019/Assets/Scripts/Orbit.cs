@@ -37,5 +37,9 @@ public class Orbit : MonoBehaviour
             transform.RotateAround(Center.transform.position, new Vector3(X_axis, Y_axis, Z_axis), -OrbitSpeed * Time.deltaTime);
         }
        
-     }  
+     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(gameObject);
+    }
 }
