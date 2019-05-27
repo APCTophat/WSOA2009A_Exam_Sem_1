@@ -30,13 +30,18 @@ public class Orbit : MonoBehaviour
     {
         if(gameObject.tag == "Sheild_1")
         {
-            transform.RotateAround(Center.transform.position, new Vector3(X_axis, Y_axis, Z_axis), OrbitSpeed * Time.deltaTime);
+            transform.RotateAround(Center.transform.position, new Vector3(X_axis, Y_axis, Z_axis), -OrbitSpeed * Time.deltaTime);
         }
         if(gameObject.tag == "Sheild_2")
         {
             transform.RotateAround(Center.transform.position, new Vector3(X_axis, Y_axis, Z_axis), -OrbitSpeed * Time.deltaTime);
         }
-       
+        if (gameObject.tag == "Sheild_3")
+        {
+            transform.RotateAround(Center.transform.position, new Vector3(X_axis, Y_axis, Z_axis), -OrbitSpeed * Time.deltaTime);
+        }
+
+        transform.LookAt(Center.transform);
      }
     private void OnCollisionEnter(Collision collision)
     {

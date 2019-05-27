@@ -432,10 +432,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d764ab16112bd848ad7f2467e82fab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumOfSheilds: 10
+  NumOfSheilds_1: 20
+  NumOfSheilds_2: 15
+  NumOfSheilds_3: 10
   ShootIntervals: 0
   SheildPrefab_1: {fileID: 2075600212, guid: c0db83a040b9fc54ba4be22a233c0bbf, type: 3}
   SheildPrefab_2: {fileID: 8385806464007675819, guid: 9b1e7c369284ec944beb291e317db534,
+    type: 3}
+  SheildPrefab_3: {fileID: 7658378600444991302, guid: d508c0dba065d81479e7b76c23fd0ab1,
     type: 3}
   PlayerBullet: {fileID: 6876199709193975966, guid: 336e4a829e5b7714197a53e3c6c76f32,
     type: 3}
@@ -578,6 +582,7 @@ GameObject:
   - component: {fileID: 1191924242}
   - component: {fileID: 1191924241}
   - component: {fileID: 1191924240}
+  - component: {fileID: 1191924244}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Center
@@ -658,6 +663,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1191924244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191924239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e652eb1308144e438b1e9c742b2d6ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 100
 --- !u!1 &1297749281
 GameObject:
   m_ObjectHideFlags: 0
