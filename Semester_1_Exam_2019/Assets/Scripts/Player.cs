@@ -17,6 +17,6 @@ public class Player : MonoBehaviour
     void Update()
     {
         float HDirect = Input.GetAxis("Horizontal");
-        transform.RotateAround(Center.transform.position, new Vector3(0, 1 , 0), -HDirect);
+        transform.RotateAround(Center.transform.position, new Vector3(100, 10 , 0), -HDirect);
     }
 }

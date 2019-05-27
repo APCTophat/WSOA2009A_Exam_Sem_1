@@ -21,14 +21,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         SpawnWalls();
-
-
-
-        Aimer = GameObject.FindGameObjectWithTag("Aimer");
-        Boss_Aimer = GameObject.FindGameObjectWithTag("Boss_Aimer");
-        ShootIntervals = 5f;
-
-        
+        SetUp();
 
     }
 
@@ -46,8 +39,6 @@ public class GameManager : MonoBehaviour
         }
         
     }
-
-
 
     void SpawnWalls()
     {
@@ -72,5 +63,12 @@ public class GameManager : MonoBehaviour
             var y_3 = radius_2 * Mathf.Sin(Mathf.Deg2Rad * i);
             Instantiate(SheildPrefab_3, new Vector3(x_3, 0, y_3), Quaternion.identity);
         }
+    }
+
+    void SetUp()
+    {
+        Aimer = GameObject.FindGameObjectWithTag("Aimer");
+        Boss_Aimer = GameObject.FindGameObjectWithTag("Boss_Aimer");
+        ShootIntervals = 5f;
     }
 }
