@@ -2,21 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuText : MonoBehaviour
 {
 
     public Text PlayText;
+    public Button PlayButton;
 
-    // Start is called before the first frame update
-    void Start()
+    public void PlayGame()
     {
-        
+        SceneManager.LoadScene("MainScene");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void QuitGane()
     {
-        
+        Application.Quit();
     }
+   
+
+   
 }
