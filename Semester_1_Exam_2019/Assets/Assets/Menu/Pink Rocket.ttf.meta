@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 6560128de548d0c44ac10bc683dbf688
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Pink Rocket
+  fontNames:
+  - Pink Rocket
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: bd8b182d5e5a4814da99453a9505cb1d, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
