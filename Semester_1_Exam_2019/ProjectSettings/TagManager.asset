@@ -11,6 +11,7 @@ TagManager:
   - Player_Bullet
   - Aimer
   - Boss_Aimer
+  - PlayerPointer
   layers:
   - Default
   - TransparentFX

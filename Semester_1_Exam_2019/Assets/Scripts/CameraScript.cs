@@ -25,8 +25,10 @@ public class CameraScript : MonoBehaviour
             Vector3 CamPos = player.position + offset;                                   //where the camera wants to go
             Vector3 MoveCam = Vector3.Lerp(transform.position, CamPos, speed);            //a distance between two points as its own vector
             transform.position = MoveCam;
-            transform.rotation = player.rotation;
+           // transform.rotation = player.rotation;
             //transform.LookAt(Center.transform);
+
+        
 
             Quaternion FinalRot = Quaternion.LookRotation(Center.transform.position - Camera.transform.position);    //SmoothLookat unity
             Camera.transform.rotation = Quaternion.Slerp(Camera.transform.rotation, FinalRot, speed);
