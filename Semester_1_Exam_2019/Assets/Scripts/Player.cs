@@ -29,8 +29,6 @@ public class Player : MonoBehaviour
     {
         Movement();
         Jump();
-
-      
     }
 
 
@@ -77,40 +75,28 @@ public class Player : MonoBehaviour
                 }
                 transform.localRotation = Quaternion.Euler(0, 0, -Z);
             }
-       
-            
-            
-          
-       
-
-           
-
-
-            
-           //Quaternion target = Quaternion.Euler(0, 0, 180);
-           //transform.localRotation = Quaternion.Slerp(transform.localRotation, target, Time.deltaTime * Smooth);
-
-
-           
-
         }
 
         if(Dist <= 0.5)
         {
             IsJumping = false;
-          //  PlayerPointer.transform.localRotation = Quaternion.Euler(0, 0, 180);
+          
         }
     }
 
     void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if(IsJumping == false)
         {
-            TargetPosition = -this.transform.position;
-            IsJumping = true;
-            IsRotating = true;
-            JumpCorrect = !JumpCorrect;
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                TargetPosition = -this.transform.position;
+                IsJumping = true;
+                IsRotating = true;
+                JumpCorrect = !JumpCorrect;
+            }
         }
+      
     }
 
     void SetUp()
