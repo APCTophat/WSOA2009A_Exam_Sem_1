@@ -14,10 +14,13 @@ public class Player : MonoBehaviour
     public float OrbitSpeed;
     public float Smooth;
     public float Z;
+    public float Stamina;
+    public float Jump;
 
     public bool IsJumping;
     public bool IsRotating;
     public bool JumpCorrect;
+    
     
     void Start()
     {

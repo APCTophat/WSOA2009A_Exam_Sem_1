@@ -6,6 +6,8 @@ public class BossScript : MonoBehaviour
 {
     private float BossHealth;
     public float MaxHealth;
+    public float BossCurrentHealth;
+    public float SpecialAttack;
 
 
     
@@ -17,6 +19,9 @@ public class BossScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        BossCurrentHealth = BossHealth / MaxHealth;
+
+
         if(BossHealth <= 0)
         {
             Destroy(gameObject);
