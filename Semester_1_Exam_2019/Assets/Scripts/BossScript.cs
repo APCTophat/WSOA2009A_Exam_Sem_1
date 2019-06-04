@@ -11,6 +11,9 @@ public class BossScript : MonoBehaviour
     public float SpecialAttackMAX;
     public float CurrentSpecialAttack;
     public float Charge;
+
+    public GameObject SpecialAttackObject;
+
     
     void Start()
     {
@@ -50,6 +53,7 @@ public class BossScript : MonoBehaviour
 
         if(Charge <= 0)
         {
+            Instantiate(SpecialAttackObject, new Vector3(0,0.5f,0), Quaternion.Euler(-90,0,0));
             Charge = 10;
         }
     }

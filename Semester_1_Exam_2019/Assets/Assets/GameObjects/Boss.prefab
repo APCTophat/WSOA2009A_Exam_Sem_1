@@ -152,6 +152,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 100
+  BossCurrentHealth: 0
+  ActivateSpecialAttack: 0
+  SpecialAttackMAX: 0
+  CurrentSpecialAttack: 0
+  Charge: 0
+  SpecialAttackObject: {fileID: 5219919625055291748, guid: 1e8e4419c8b83b04e9683251f5f3e8ac,
+    type: 3}
 --- !u!1 &6903415121592283331
 GameObject:
   m_ObjectHideFlags: 0

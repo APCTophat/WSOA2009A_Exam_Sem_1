@@ -173,4 +173,11 @@ public class Player : MonoBehaviour
             Stamina = 0;
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+       
+    }
+
+  
 }
