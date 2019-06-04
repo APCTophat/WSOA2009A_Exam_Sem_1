@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     public GameObject PlayerPointer;
 
     public Transform CurrentPosition;
+    public Transform CurPos;
+    public Transform latePos;
 
     public Vector3 TargetPosition;
 
@@ -15,11 +17,16 @@ public class Player : MonoBehaviour
     public float Smooth;
     public float Z;
     public float Stamina;
-    public float Jump;
+    public float StaminaMax;
+    public float CurrentStamina;
+    public float JumpReady;
+    public float JumpMax;
+    public float CurrentJump;
 
     public bool IsJumping;
     public bool IsRotating;
     public bool JumpCorrect;
+    public bool CanShoot;
     
     
     void Start()
@@ -32,6 +39,7 @@ public class Player : MonoBehaviour
     {
         Movement();
         Jump();
+        TheStamina();
     }
 
 
@@ -44,7 +52,19 @@ public class Player : MonoBehaviour
         if (IsJumping == false)
         {
             float HDirect = Input.GetAxis("Horizontal");
-            PlayerPointer.transform.RotateAround(Center.transform.position, new Vector3(0, 1, 0), -HDirect);
+            if(Stamina >= 1)
+            {
+                PlayerPointer.transform.RotateAround(Center.transform.position, new Vector3(0, 1, 0), -HDirect);
+            }
+           
+            if(HDirect != 0)
+            {
+                Stamina -= Time.deltaTime * 10;
+            }
+            if(HDirect == 0)
+            {
+                Stamina += Time.deltaTime * 3;
+            }
         }
       
 
@@ -89,15 +109,36 @@ public class Player : MonoBehaviour
 
     void Jump()
     {
+        CurrentJump = JumpReady / JumpMax;
+        JumpReady += Time.deltaTime;
+        if(JumpReady >= JumpMax)
+        {
+            JumpReady = JumpMax;
+        }
         if(IsJumping == false)
         {
-            if (Input.GetKeyDown(KeyCode.Z))
+            if(Stamina >= 25 && JumpReady == JumpMax)
             {
-                TargetPosition = -this.transform.position;
-                IsJumping = true;
-                IsRotating = true;
-                JumpCorrect = !JumpCorrect;
+                if (Input.GetKeyDown(KeyCode.Z))
+                {
+                    TargetPosition = -this.transform.position;
+                    IsJumping = true;
+                    IsRotating = true;
+                    JumpCorrect = !JumpCorrect;
+                    Stamina = Stamina - 25;
+                    JumpReady = 0;
+                }
             }
+            
+        }
+
+        if(IsJumping == true)
+        {
+            CanShoot = false;
+        }
+        else
+        {
+            CanShoot = true;
         }
       
     }
@@ -111,5 +152,25 @@ public class Player : MonoBehaviour
 
         IsJumping = false;
         JumpCorrect = true;
+
+        StaminaMax = 100;
+        Stamina = StaminaMax;
+
+        JumpMax = 5;
+        JumpReady = JumpMax;
+    }
+
+    void TheStamina()
+    {
+        CurrentStamina = Stamina / StaminaMax;
+        Stamina += Time.deltaTime * 3;
+        if (Stamina >= StaminaMax)
+        {
+            Stamina = StaminaMax;
+        }
+        if(Stamina <= 0)
+        {
+            Stamina = 0;
+        }
     }
 }

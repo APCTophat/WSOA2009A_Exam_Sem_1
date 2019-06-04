@@ -39,7 +39,7 @@ public class UiScript : MonoBehaviour
         SetValues();
     }
 
-    void SetUp()
+    void SetUp()     //finds all relevant GameObjects that is needed in the script for referencing
     {
         BossHealth = GameObject.Find("TheBossHealthBar").GetComponent<Image>();
         BossSpecial = GameObject.Find("BossSpecialBar").GetComponent<Image>();
@@ -54,12 +54,16 @@ public class UiScript : MonoBehaviour
         GameManager = GameObject.FindGameObjectWithTag("GameController");
     }
 
-    void GetValues()
+    void GetValues()       //gets the values from other scripts and sets them to variables in this script
     {
         BossHP_Value = Boss.GetComponent<BossScript>().BossCurrentHealth;
-        BossSP_Value = Boss.GetComponent<BossScript>().SpecialAttack;
-        Stamina_Value = Player.GetComponent<Player>().Stamina;
-        JumpBar_Value = Player.GetComponent<Player>().Jump;
+        BossSP_Value = Boss.GetComponent<BossScript>().CurrentSpecialAttack;
+        Stamina_Value = Player.GetComponent<Player>().CurrentStamina;
+        JumpBar_Value = Player.GetComponent<Player>().CurrentJump;
+
+        Ammo_1_True = GameManager.GetComponent<GameManager>().Ammo_1;
+        Ammo_2_True = GameManager.GetComponent<GameManager>().Ammo_2;
+        Ammo_3_True = GameManager.GetComponent<GameManager>().Ammo_3;
     }
     void SetValues()
     {
@@ -67,6 +71,10 @@ public class UiScript : MonoBehaviour
         BossSpecial.fillAmount = BossSP_Value;
         StaminaBar.fillAmount = Stamina_Value;
         JumpBar.fillAmount = JumpBar_Value;
+
+        Ammo_1.enabled = Ammo_1_True;
+        Ammo_2.enabled = Ammo_2_True;
+        Ammo_3.enabled = Ammo_3_True;
     
     }
 }

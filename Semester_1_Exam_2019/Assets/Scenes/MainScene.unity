@@ -2471,7 +2471,9 @@ MonoBehaviour:
   NumOfSheilds_1: 20
   NumOfSheilds_2: 15
   NumOfSheilds_3: 10
+  Ammo: 0
   ShootIntervals: 0
+  RefillAmmo: 0
   SheildPrefab_1: {fileID: 2075600212, guid: c0db83a040b9fc54ba4be22a233c0bbf, type: 3}
   SheildPrefab_2: {fileID: 8385806464007675819, guid: 9b1e7c369284ec944beb291e317db534,
     type: 3}
@@ -2483,6 +2485,11 @@ MonoBehaviour:
     type: 3}
   Aimer: {fileID: 0}
   Boss_Aimer: {fileID: 0}
+  Player: {fileID: 0}
+  Ammo_1: 0
+  Ammo_2: 0
+  Ammo_3: 0
+  CanShoot: 0
 --- !u!4 &1118271352
 Transform:
   m_ObjectHideFlags: 0
@@ -4899,6 +4906,11 @@ PrefabInstance:
       propertyPath: Center
       value: 
       objectReference: {fileID: 1191924239}
+    - target: {fileID: 2952134357665383177, guid: 8d0350c52ec08dd4c840251d41c93e72,
+        type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d0350c52ec08dd4c840251d41c93e72, type: 3}
 --- !u!1001 &6903415122102639451

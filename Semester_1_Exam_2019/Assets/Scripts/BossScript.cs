@@ -7,25 +7,29 @@ public class BossScript : MonoBehaviour
     private float BossHealth;
     public float MaxHealth;
     public float BossCurrentHealth;
-    public float SpecialAttack;
-
-
+    public float ActivateSpecialAttack;
+    public float SpecialAttackMAX;
+    public float CurrentSpecialAttack;
+    public float Charge;
     
     void Start()
     {
         BossHealth = MaxHealth;
+        ActivateSpecialAttack = 0;
+        SpecialAttackMAX = 10;
+        Charge = 10;
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         BossCurrentHealth = BossHealth / MaxHealth;
-
-
         if(BossHealth <= 0)
         {
             Destroy(gameObject);
         }
+
+        SpecialAttack(); 
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -37,5 +41,17 @@ public class BossScript : MonoBehaviour
        
     }
 
+    void SpecialAttack()
+    {
+        CurrentSpecialAttack = ActivateSpecialAttack / SpecialAttackMAX;
+
+        Charge -= Time.deltaTime;
+        ActivateSpecialAttack = 10 - Charge;
+
+        if(Charge <= 0)
+        {
+            Charge = 10;
+        }
+    }
 
 }

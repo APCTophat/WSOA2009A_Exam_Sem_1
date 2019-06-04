@@ -108,6 +108,6 @@ MonoBehaviour:
   Player: {fileID: 8385806464007675819}
   rb: {fileID: 0}
   X_axis: 0
-  Y_axis: 1
+  Y_axis: -1
   Z_axis: 0
   OrbitSpeed: 20
