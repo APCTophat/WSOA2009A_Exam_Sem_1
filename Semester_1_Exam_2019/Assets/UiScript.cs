@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UiScript : MonoBehaviour
 {
@@ -26,9 +27,14 @@ public class UiScript : MonoBehaviour
     private bool Ammo_2_True;
     private bool Ammo_3_True;
 
+    public Text Level;
+
+    public string sceneName;
+
     
     void Start()
     {
+        SceneCheck();
         SetUp();
     }
 
@@ -48,10 +54,13 @@ public class UiScript : MonoBehaviour
         Ammo_1  = GameObject.Find("Ammo_1").GetComponent<Image>();
         Ammo_2  = GameObject.Find("Ammo_2").GetComponent<Image>();
         Ammo_3  = GameObject.Find("Ammo_3").GetComponent<Image>();
+        Level = GameObject.Find("LevelName").GetComponent<Text>();
 
         Boss = GameObject.FindGameObjectWithTag("Center");
         Player = GameObject.FindGameObjectWithTag("Player");
         GameManager = GameObject.FindGameObjectWithTag("GameController");
+
+        Level.text = sceneName;
     }
 
     void GetValues()       //gets the values from other scripts and sets them to variables in this script
@@ -76,5 +85,12 @@ public class UiScript : MonoBehaviour
         Ammo_2.enabled = Ammo_2_True;
         Ammo_3.enabled = Ammo_3_True;
     
+    }
+
+
+    void SceneCheck()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        sceneName = currentScene.name;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Bullet : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class Bullet : MonoBehaviour
 
     public bool IsPlayerBullet;
     public bool IsBossBullet;
+    public bool InLevel_1;
+    public bool InLevel_2;
+    public bool InLevel_3;
 
     public float DestroyTime;
     public float speed;
@@ -22,9 +26,25 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
+        SceneCheck();
         Player = GameObject.FindGameObjectWithTag("Player");
         Center = GameObject.FindGameObjectWithTag("Center");
         Boss_Aimer = GameObject.FindGameObjectWithTag("Boss_Aimer");
+
+        if(InLevel_1 == true)
+        {
+            BossSpeed = 10;
+        }
+        if (InLevel_2 == true)
+        {
+            BossSpeed = 15;
+        }
+        if (InLevel_3 == true)
+        {
+            BossSpeed = 20;
+        }
+
+
 
         if (gameObject.tag == "Player_Bullet")
         {
@@ -58,7 +78,11 @@ public class Bullet : MonoBehaviour
            if(collision.gameObject.tag == "Player")
             {
                 Destroy(gameObject);
-            }      
+            }    
+           if(collision.gameObject.tag == "SpecialAttack")
+            {
+                Destroy(gameObject);
+            } 
         }
        
         if(gameObject.tag == "Player_Bullet")
@@ -66,5 +90,32 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject);
             
         }
+    }
+
+    void SceneCheck()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+
+        if (sceneName == "Level_1")
+        {
+            InLevel_1 = true;
+        }
+        else
+        {
+            if (sceneName == "Level_2")
+            {
+                InLevel_2 = true;
+            }
+            else
+            {
+                if (sceneName == "Level_3")
+                {
+                    InLevel_3 = true;
+                }
+            }
+        }
+
+
     }
 }

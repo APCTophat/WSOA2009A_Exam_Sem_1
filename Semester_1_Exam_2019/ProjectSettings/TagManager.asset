@@ -14,6 +14,7 @@ TagManager:
   - PlayerPointer
   - SpecialAttack
   - PlayerChild
+  - GameOver
   layers:
   - Default
   - TransparentFX

@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
     public GameObject Center;
     public GameObject PlayerPointer;
+  
 
     public Transform CurrentPosition;
     public Transform CurPos;
@@ -63,7 +65,7 @@ public class Player : MonoBehaviour
             }
             if(HDirect == 0)
             {
-                Stamina += Time.deltaTime * 3;
+                Stamina += Time.deltaTime * 10;
             }
         }
       
@@ -147,6 +149,7 @@ public class Player : MonoBehaviour
     {
         Center = GameObject.FindGameObjectWithTag("Center");
         PlayerPointer = GameObject.FindGameObjectWithTag("PlayerPointer");
+        
 
         Z = 0f;
 
@@ -176,7 +179,9 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(gameObject);
+        
+        Time.timeScale = 0f;
+       // Destroy(gameObject);
     }
 
   

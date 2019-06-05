@@ -12,7 +12,7 @@ public class MenuText : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("Level_1");
     }
 
     public void QuitGane()
@@ -20,6 +20,10 @@ public class MenuText : MonoBehaviour
         Application.Quit();
     }
    
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MenueScene");
+    }
 
    
 }

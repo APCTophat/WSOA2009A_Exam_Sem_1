@@ -18,6 +18,7 @@ public class CameraScript : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("PlayerChild").transform;
+        Center = GameObject.FindGameObjectWithTag("Center");
     }
 
     // Update is called once per frame
