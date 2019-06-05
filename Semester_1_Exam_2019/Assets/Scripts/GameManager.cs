@@ -253,8 +253,13 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             Application.Quit();
+            Debug.Log("Quit");
         }
-        if(Time.timeScale == 0f)
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("Level_1");
+        }
+        if (Time.timeScale == 0f)
         {
             GameOver.SetActive(true);
         }
