@@ -22,6 +22,7 @@ public class MenuText : MonoBehaviour
    
     public void MainMenu()
     {
+        Debug.Log("got to the menu");
         SceneManager.LoadScene("MenueScene");
     }
 

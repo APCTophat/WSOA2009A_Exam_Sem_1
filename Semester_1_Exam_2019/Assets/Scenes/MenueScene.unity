@@ -2614,8 +2614,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 878.5, y: 59.7}
-  m_SizeDelta: {x: 441, y: 477}
+  m_AnchoredPosition: {x: 865.9, y: 31.5}
+  m_SizeDelta: {x: 466.2, y: 533.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1170933631
 MonoBehaviour:
@@ -2656,7 +2656,7 @@ MonoBehaviour:
     -be careful, it will try and kill you back.
 
 
-    -detroy its protective sheilds and avoid its attacks
+    -destroy its protective shields and avoid its attacks
 
 
     -Managing your stamina and ammo is essential.
@@ -3395,7 +3395,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Font- Pink Rocket by Darrel Flood\n\n\t"
+  m_Text: "Font- Pink Rocket by Darrel Flood\n\nAll assets and source code where created
+    by Alex Carvalho In Unity Engine, Krita and Blender respectfully.\n\n\t"
 --- !u!222 &1608091783
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4072,8 +4073,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -182, y: -15.1}
-  m_SizeDelta: {x: 327.7, y: 263.8}
+  m_AnchoredPosition: {x: -182, y: -31.6}
+  m_SizeDelta: {x: 327.7, y: 296.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2034188995
 MonoBehaviour:
@@ -4109,7 +4110,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Key Commands\n\tQ- Quit the Application\n\tp- change to the Next scene/level\n\to-
-    change to the previous scene/level\n\tr-Retry\nThere are three total levels\n\n\t"
+    change to the previous scene/level\n\tr-Retry\n\tw- Win/kill the boss\nThere are
+    three total levels\n\n\t"
 --- !u!222 &2034188996
 CanvasRenderer:
   m_ObjectHideFlags: 0

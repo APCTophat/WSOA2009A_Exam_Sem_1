@@ -253,7 +253,11 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             Application.Quit();
-            Debug.Log("Quit");
+         
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            Invoke("NextLevel", 0f);
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -261,7 +265,12 @@ public class GameManager : MonoBehaviour
         }
         if (Time.timeScale == 0f)
         {
-            GameOver.SetActive(true);
+            if(GameWon.activeInHierarchy != true)
+            {
+                GameOver.SetActive(true);
+            }
+            
+           
         }
     }
 
@@ -275,6 +284,7 @@ public class GameManager : MonoBehaviour
         if(sceneName == "Level_3")
         {
             GameWon.SetActive(true);
+            Time.timeScale = 0f;
         }
       
     }
